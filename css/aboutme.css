@@ -1,0 +1,156 @@
+/* Reset + fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a0f24;
+    color: white;
+    line-height: 1.6;
+}
+
+/* -------- HEADER -------- */
+header {
+    background: #0d1128;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-dev h1 {
+    color: white;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4da6ff;
+}
+
+/* ---- SECCIÓN SOBRE MÍ ---- */
+.hero-principal {
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Card estilo info */
+.card2 {
+    background: #0d1128;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+.card2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(77, 166, 255, 0.4);
+    border: 1px solid #4da6ff;
+}
+
+.card2 h1 {
+    font-size: 22px;
+    color: #4da6ff;
+    margin-bottom: 15px;
+}
+
+.card2 p {
+    font-size: 15px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* ---- SECCIÓN SKILLS ---- */
+.hero-skills {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.card3 {
+    background: #0d1128;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card3:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(77, 166, 255, 0.4);
+}
+
+.card3 h1 {
+    font-size: 26px;
+    color: #4da6ff;
+    margin-bottom: 25px;
+}
+
+/* Tecnologías */
+.project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.project-stack i {
+    font-size: 48px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.project-stack i:hover {
+    transform: scale(1.2);
+    color: #4da6ff;
+}
+
+/* -------- FOOTER -------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0d1128;
+    color: #aaa;
+    margin-top: 40px;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+    .hero-principal {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+
+    .card3 {
+        padding: 20px;
+    }
+
+    .project-stack {
+        gap: 15px;
+    }
+
+    .card3 h1 {
+        font-size: 22px;
+    }
+}

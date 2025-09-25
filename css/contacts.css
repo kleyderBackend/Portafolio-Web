@@ -1,0 +1,103 @@
+/* -------- CONTACTO -------- */
+main {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 32px;
+    color: #4da6ff;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Links sociales */
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 28px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #4da6ff;
+}
+
+/* Contenedor formulario */
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #0d1128;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Inputs */
+.contact input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #1a213f;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.contact input::placeholder {
+    color: #aaa;
+}
+
+.contact input:focus {
+    outline: none;
+    border: 2px solid #4da6ff;
+    background: #10162d;
+}
+
+/* Botón */
+#btn-message {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4da6ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-message:hover {
+    background: #1e70c1;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+    main {
+        padding: 40px 20px;
+    }
+
+    main h1 {
+        font-size: 26px;
+    }
+
+    .contact {
+        padding: 20px;
+    }
+}
