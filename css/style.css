@@ -143,28 +143,41 @@ footer {
 
 /* -------- RESPONSIVE -------- */
 @media (max-width: 768px) {
-    main {
+    body {
+        padding: 0;
+        /* quitar padding global en móvil */
+    }
+
+    header,
+    footer {
+        width: 100%;
+        padding: 20px;
+        /* padding interno sin afectar ancho */
+    }
+
+    nav ul {
         flex-direction: column;
-        padding: 40px 20px;
+        /* menú en columna en móvil */
+        gap: 10px;
         text-align: center;
     }
 
-    #my-photo img {
-        margin-top: 20px;
-        width: 200px;
+    main {
+        flex-direction: column;
+        /* apila contenido */
+        padding: 20px;
     }
 
-    #myDescription {
+    #hero-featured,
+    #hero-other-projects {
+        padding: 30px 10px;
+    }
+
+    .card {
         max-width: 100%;
     }
 
-    #myDescription h2 {
+    #title-other {
         font-size: 24px;
-    }
-
-    button {
-        margin: 10px auto;
-        display: block;
-        width: 80%;
     }
 }

@@ -137,20 +137,41 @@ footer {
 
 /* -------- RESPONSIVE -------- */
 @media (max-width: 768px) {
-    .hero-principal {
-        grid-template-columns: 1fr;
-        padding: 40px 20px;
+    body {
+        padding: 0;
+        /* quitar padding global en móvil */
     }
 
-    .card3 {
+    header,
+    footer {
+        width: 100%;
+        padding: 20px;
+        /* padding interno sin afectar ancho */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* menú en columna en móvil */
+        gap: 10px;
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column;
+        /* apila contenido */
         padding: 20px;
     }
 
-    .project-stack {
-        gap: 15px;
+    #hero-featured,
+    #hero-other-projects {
+        padding: 30px 10px;
     }
 
-    .card3 h1 {
-        font-size: 22px;
+    .card {
+        max-width: 100%;
+    }
+
+    #title-other {
+        font-size: 24px;
     }
 }
