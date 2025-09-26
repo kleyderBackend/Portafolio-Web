@@ -11,3 +11,17 @@ demoButtons.forEach((btn) => {
         });
     });
 });
+
+const disabledCodeBtns = document.querySelectorAll(".btn-code-disabled");
+
+disabledCodeBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Código no disponible',
+            text: 'Códigos no disponibles por confidencialidad.',
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+        });
+    });
+});
