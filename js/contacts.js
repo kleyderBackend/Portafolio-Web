@@ -5,7 +5,7 @@ const btnSend = document.getElementById("btn-message");
 
 btnSend.addEventListener('click', (e) => {
     e.preventDefault();
-    if (!inputName.value.trim()  || !inputtEmail.value.trim() || !inputMessage.value.trim()) {
+    if (!inputName.value.trim() || !inputtEmail.value.trim() || !inputMessage.value.trim()) {
         Swal.fire({
             title: 'Campos Vacio',
             text: 'Los Todos los campos estan Vacios , Por favor llene los campos',
@@ -39,5 +39,7 @@ btnSend.addEventListener('click', (e) => {
         icon: 'success',
         confirmButtonText: 'Ok'
     });
-    return;
+    inputName.value = "";
+    inputtEmail.value = "";
+    inputMessage.value = "";
 });
