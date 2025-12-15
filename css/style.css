@@ -126,16 +126,6 @@ button {
     background-color: #e2e2e2;
 }
 
-#btn-cv {
-    background: transparent;
-    color: #4da6ff;
-    border: 2px solid #4da6ff;
-}
-
-#btn-cv:hover {
-    background-color: #4da6ff;
-    color: #ffffff;
-}
 
 /* =========================
    SOCIAL LINKS
