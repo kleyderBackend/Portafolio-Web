@@ -8,18 +8,22 @@
 
 body {
     background-color: #0a0f24;
-    /* Fondo oscuro pro */
     color: white;
     line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* -------- HEADER -------- */
 header {
     background: #0d1128;
-    padding: 20px 50px;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .name-dev h1 {
@@ -37,6 +41,7 @@ nav ul li a {
     text-decoration: none;
     color: white;
     transition: 0.3s;
+    font-size: 16px;
 }
 
 nav ul li a:hover {
@@ -46,16 +51,16 @@ nav ul li a:hover {
 /* ---- SECCIONES DE PROYECTOS ---- */
 #hero-featured,
 #hero-other-projects {
-    padding: 60px 40px;
+    padding: 60px 5%;
     display: flex;
     flex-direction: column;
-    /* Título arriba + cards */
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 #title-other {
-    font-size: 32px;
+    font-size: clamp(24px, 5vw, 32px);
     margin-bottom: 40px;
     color: #4da6ff;
 }
@@ -63,10 +68,12 @@ nav ul li a:hover {
 /* Contenedor de cards */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 30px;
     justify-items: center;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* -------- CARD -------- */
@@ -75,10 +82,12 @@ nav ul li a:hover {
     border-radius: 12px;
     padding: 20px;
     width: 100%;
-    max-width: 350px;
+    max-width: 100%;
     text-align: left;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -98,17 +107,18 @@ nav ul li a:hover {
 
 /* Títulos */
 .card h2 {
-    font-size: 22px;
+    font-size: clamp(18px, 4vw, 22px);
     color: #4da6ff;
     margin-bottom: 12px;
 }
 
 /* Texto */
 .card p {
-    font-size: 15px;
+    font-size: clamp(14px, 3vw, 15px);
     color: #ddd;
     margin-bottom: 20px;
     line-height: 1.6;
+    flex-grow: 1;
 }
 
 .card p a {
@@ -124,11 +134,13 @@ nav ul li a:hover {
 /* Stack de tecnologías */
 .project-stack {
     margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .project-stack i {
     font-size: 24px;
-    margin-right: 10px;
     transition: transform 0.3s;
 }
 
@@ -137,6 +149,13 @@ nav ul li a:hover {
 }
 
 /* -------- BOTONES -------- */
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
 .btn-demo,
 .btn-code {
     padding: 10px 20px;
@@ -144,7 +163,12 @@ nav ul li a:hover {
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
-    margin: 5px 5px 0 0;
+    font-size: clamp(14px, 3vw, 16px);
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-demo {
@@ -171,49 +195,158 @@ nav ul li a:hover {
 /* -------- FOOTER -------- */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 20px 5%;
     background: #0d1128;
     color: #aaa;
     margin-top: 40px;
+    width: 100%;
 }
 
 /* -------- RESPONSIVE -------- */
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-        /* quitar padding global en móvil */
-    }
 
-    header,
-    footer {
-        width: 100%;
-        padding: 20px;
-        /* padding interno sin afectar ancho */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 4%;
     }
-
-    nav ul {
-        flex-direction: column;
-        /* menú en columna en móvil */
-        gap: 10px;
-        text-align: center;
-    }
-
-    main {
-        flex-direction: column;
-        /* apila contenido */
-        padding: 20px;
-    }
-
+    
     #hero-featured,
     #hero-other-projects {
-        padding: 30px 10px;
+        padding: 50px 4%;
     }
+    
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 25px;
+    }
+}
 
+/* Móvil Grande (576px - 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    #hero-featured,
+    #hero-other-projects {
+        padding: 40px 20px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
     .card {
-        max-width: 100%;
+        margin: 0 auto;
     }
+    
+    .btn-demo,
+    .btn-code {
+        min-width: 140px;
+    }
+}
 
+/* Móvil Pequeño (hasta 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .name-dev h1 {
+        font-size: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    nav ul li a {
+        font-size: 15px;
+        padding: 5px 0;
+        display: block;
+    }
+    
+    #hero-featured,
+    #hero-other-projects {
+        padding: 30px 15px;
+    }
+    
     #title-other {
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .card img {
+        height: 150px;
+    }
+    
+    .project-stack i {
+        font-size: 20px;
+    }
+    
+    .btn-demo,
+    .btn-code {
+        padding: 8px 16px;
+        font-size: 14px;
+        min-width: 110px;
+    }
+    
+    .card-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Pantallas muy pequeñas (hasta 360px) */
+@media (max-width: 360px) {
+    .name-dev h1 {
+        font-size: 18px;
+    }
+    
+    #title-other {
+        font-size: 20px;
+    }
+    
+    .card h2 {
+        font-size: 16px;
+    }
+    
+    .card p {
+        font-size: 13px;
+    }
+    
+    .btn-demo,
+    .btn-code {
+        padding: 7px 14px;
+        min-width: 100%;
+    }
+}
+
+/* Pantallas grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    header,
+    #hero-featured,
+    #hero-other-projects,
+    footer {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 }

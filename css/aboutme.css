@@ -10,32 +10,42 @@ body {
     background-color: #0a0f24;
     color: white;
     line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* -------- HEADER -------- */
 header {
     background: #0d1128;
-    padding: 20px 50px;
+    padding: clamp(15px, 3vw, 20px) clamp(20px, 5vw, 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .name-dev h1 {
     color: white;
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
+    white-space: nowrap;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: clamp(10px, 2vw, 20px);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     transition: 0.3s;
+    font-size: clamp(14px, 3vw, 16px);
+    padding: 5px 10px;
 }
 
 nav ul li a:hover {
@@ -44,23 +54,28 @@ nav ul li a:hover {
 
 /* ---- SECCIÓN SOBRE MÍ ---- */
 .hero-principal {
-    padding: 60px 40px;
+    padding: clamp(30px, 6vw, 60px) clamp(15px, 4vw, 40px);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(20px, 4vw, 30px);
     justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Card estilo info */
 .card2 {
     background: #0d1128;
     border-radius: 12px;
-    padding: 25px;
+    padding: clamp(20px, 4vw, 25px);
     width: 100%;
-    max-width: 350px;
+    max-width: 100%;
     text-align: left;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .card2:hover {
@@ -70,31 +85,33 @@ nav ul li a:hover {
 }
 
 .card2 h1 {
-    font-size: 22px;
+    font-size: clamp(18px, 4vw, 22px);
     color: #4da6ff;
-    margin-bottom: 15px;
+    margin-bottom: clamp(10px, 3vw, 15px);
 }
 
 .card2 p {
-    font-size: 15px;
+    font-size: clamp(14px, 3vw, 15px);
     color: #ddd;
     line-height: 1.6;
 }
 
 /* ---- SECCIÓN SKILLS ---- */
 .hero-skills {
-    padding: 60px 40px;
+    padding: clamp(30px, 6vw, 60px) clamp(15px, 4vw, 40px);
     text-align: center;
+    width: 100%;
 }
 
 .card3 {
     background: #0d1128;
     border-radius: 12px;
-    padding: 30px;
-    max-width: 800px;
+    padding: clamp(20px, 4vw, 30px);
+    max-width: min(95%, 800px);
     margin: 0 auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
 }
 
 .card3:hover {
@@ -103,9 +120,9 @@ nav ul li a:hover {
 }
 
 .card3 h1 {
-    font-size: 26px;
+    font-size: clamp(20px, 5vw, 26px);
     color: #4da6ff;
-    margin-bottom: 25px;
+    margin-bottom: clamp(15px, 4vw, 25px);
 }
 
 /* Tecnologías */
@@ -113,12 +130,14 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: clamp(15px, 3vw, 25px);
+    padding: 10px;
 }
 
 .project-stack i {
-    font-size: 48px;
+    font-size: clamp(32px, 6vw, 48px);
     transition: transform 0.3s, color 0.3s;
+    padding: 8px;
 }
 
 .project-stack i:hover {
@@ -129,49 +148,210 @@ nav ul li a:hover {
 /* -------- FOOTER -------- */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 20px);
     background: #0d1128;
     color: #aaa;
-    margin-top: 40px;
+    margin-top: clamp(20px, 5vw, 40px);
+    width: 100%;
 }
 
 /* -------- RESPONSIVE -------- */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+    
+    .hero-principal {
+        padding: 40px 30px;
+    }
+    
+    .hero-skills {
+        padding: 40px 30px;
+    }
+    
+    .card3 {
+        max-width: 90%;
+    }
+}
+
+/* Móviles grandes (576px - 768px) */
 @media (max-width: 768px) {
-    body {
-        padding: 0;
-        /* quitar padding global en móvil */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px 20px;
     }
-
-    header,
-    footer {
-        width: 100%;
+    
+    .name-dev h1 {
+        white-space: normal;
+    }
+    
+    nav ul {
+        gap: 8px;
+    }
+    
+    nav ul li a {
+        padding: 4px 8px;
+    }
+    
+    .hero-principal {
+        padding: 30px 20px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero-skills {
+        padding: 30px 20px;
+    }
+    
+    .card2,
+    .card3 {
         padding: 20px;
-        /* padding interno sin afectar ancho */
     }
+    
+    .project-stack {
+        gap: 15px;
+    }
+    
+    .project-stack i {
+        font-size: 36px;
+    }
+}
 
+/* Móviles pequeños (hasta 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 12px 15px;
+    }
+    
+    .name-dev h1 {
+        font-size: 16px;
+    }
+    
     nav ul {
         flex-direction: column;
-        /* menú en columna en móvil */
+        gap: 5px;
+    }
+    
+    nav ul li a {
+        font-size: 14px;
+        padding: 3px 0;
+        display: block;
+    }
+    
+    .hero-principal {
+        padding: 25px 15px;
+        gap: 15px;
+    }
+    
+    .hero-skills {
+        padding: 25px 15px;
+    }
+    
+    .card2 {
+        padding: 18px;
+    }
+    
+    .card2 h1 {
+        font-size: 16px;
+    }
+    
+    .card2 p {
+        font-size: 13px;
+    }
+    
+    .card3 {
+        padding: 18px 15px;
+    }
+    
+    .card3 h1 {
+        font-size: 18px;
+    }
+    
+    .project-stack {
+        gap: 12px;
+    }
+    
+    .project-stack i {
+        font-size: 28px;
+        padding: 6px;
+    }
+    
+    footer {
+        font-size: 12px;
+        padding: 12px;
+    }
+}
+
+/* Pantallas muy pequeñas (hasta 360px) */
+@media (max-width: 360px) {
+    .name-dev h1 {
+        font-size: 14px;
+    }
+    
+    nav ul li a {
+        font-size: 12px;
+    }
+    
+    .hero-principal {
+        padding: 20px 10px;
+    }
+    
+    .hero-skills {
+        padding: 20px 10px;
+    }
+    
+    .card2 {
+        padding: 15px;
+    }
+    
+    .card2 h1 {
+        font-size: 14px;
+    }
+    
+    .card2 p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .card3 {
+        padding: 15px 12px;
+    }
+    
+    .card3 h1 {
+        font-size: 16px;
+    }
+    
+    .project-stack {
         gap: 10px;
-        text-align: center;
     }
-
-    main {
-        flex-direction: column;
-        /* apila contenido */
-        padding: 20px;
-    }
-
-    #hero-featured,
-    #hero-other-projects {
-        padding: 30px 10px;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-
-    #title-other {
+    
+    .project-stack i {
         font-size: 24px;
+        padding: 5px;
+    }
+}
+
+/* Pantallas grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    header {
+        padding: 20px 8%;
+    }
+    
+    .hero-principal,
+    .hero-skills {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    
+    .hero-principal {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }

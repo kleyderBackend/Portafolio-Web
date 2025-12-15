@@ -1,20 +1,25 @@
 /* -------- CONTACTO -------- */
 main {
-    padding: 60px 40px;
+    padding: clamp(30px, 5vw, 60px) clamp(15px, 4vw, 40px);
     text-align: center;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 main h1 {
-    font-size: 32px;
+    font-size: clamp(24px, 5vw, 32px);
     color: #4da6ff;
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 3vw, 20px);
 }
 
 main p {
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     color: #ddd;
-    margin-bottom: 30px;
-    max-width: 600px;
+    margin-bottom: clamp(20px, 4vw, 30px);
+    max-width: min(90%, 600px);
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
@@ -22,108 +27,201 @@ main p {
 
 /* Links sociales */
 .social-links {
-    margin: 20px 0;
+    margin: clamp(15px, 3vw, 20px) 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .social-links a {
-    margin: 0 10px;
-    font-size: 28px;
+    font-size: clamp(22px, 4vw, 28px);
     color: white;
     transition: 0.3s;
+    padding: 8px;
 }
 
 .social-links a:hover {
     color: #4da6ff;
+    transform: scale(1.1);
 }
 
 /* Contenedor formulario */
 .contact {
-    max-width: 600px;
+    max-width: min(95%, 600px);
     margin: 0 auto;
     background: #0d1128;
-    padding: 30px;
+    padding: clamp(20px, 4vw, 30px);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    width: 100%;
 }
 
 /* Inputs */
 .contact input {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: none;
+    padding: clamp(10px, 2.5vw, 12px) clamp(12px, 3vw, 15px);
+    margin-bottom: clamp(15px, 3vw, 20px);
+    border: 2px solid transparent;
     border-radius: 8px;
     background: #1a213f;
     color: white;
-    font-size: 15px;
-    transition: 0.3s;
+    font-size: clamp(14px, 3vw, 15px);
+    transition: all 0.3s ease;
 }
 
 .contact input::placeholder {
     color: #aaa;
+    font-size: clamp(13px, 2.5vw, 14px);
 }
 
 .contact input:focus {
     outline: none;
     border: 2px solid #4da6ff;
     background: #10162d;
+    box-shadow: 0 0 8px rgba(77, 166, 255, 0.3);
 }
 
 /* Botón */
 #btn-message {
     width: 100%;
-    padding: 12px;
+    padding: clamp(10px, 2.5vw, 12px);
     border: none;
     border-radius: 8px;
     background: #4da6ff;
     color: white;
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
 #btn-message:hover {
     background: #1e70c1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(77, 166, 255, 0.3);
 }
 
 /* -------- RESPONSIVE -------- */
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-        /* quitar padding global en móvil */
-    }
 
-    header,
-    footer {
-        width: 100%;
-        padding: 20px;
-        /* padding interno sin afectar ancho */
-    }
-
-    nav ul {
-        flex-direction: column;
-        /* menú en columna en móvil */
-        gap: 10px;
-        text-align: center;
-    }
-
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
     main {
-        flex-direction: column;
-        /* apila contenido */
+        padding: 40px 30px;
+    }
+    
+    .contact {
+        max-width: 90%;
+    }
+}
+
+/* Móviles grandes (576px - 768px) */
+@media (max-width: 768px) {
+    main {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+    
+    .social-links {
+        gap: 12px;
+    }
+    
+    .social-links a {
+        padding: 6px;
+    }
+    
+    .contact {
+        max-width: 95%;
         padding: 20px;
     }
+}
 
-    #hero-featured,
-    #hero-other-projects {
-        padding: 30px 10px;
+/* Móviles pequeños (hasta 576px) */
+@media (max-width: 576px) {
+    main {
+        padding: 20px 15px;
     }
-
-    .card {
+    
+    main h1 {
+        font-size: 22px;
+    }
+    
+    main p {
+        font-size: 14px;
         max-width: 100%;
     }
+    
+    .social-links {
+        gap: 10px;
+    }
+    
+    .social-links a {
+        font-size: 20px;
+        padding: 5px;
+    }
+    
+    .contact {
+        padding: 18px 15px;
+        max-width: 100%;
+    }
+    
+    .contact input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    #btn-message {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
 
-    #title-other {
-        font-size: 24px;
+/* Pantallas muy pequeñas (hasta 360px) */
+@media (max-width: 360px) {
+    main {
+        padding: 15px 10px;
+    }
+    
+    main h1 {
+        font-size: 20px;
+    }
+    
+    main p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .social-links {
+        gap: 8px;
+    }
+    
+    .social-links a {
+        font-size: 18px;
+    }
+    
+    .contact {
+        padding: 15px 12px;
+    }
+    
+    .contact input {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    #btn-message {
+        padding: 9px;
+        font-size: 14px;
+    }
+}
+
+/* Pantallas grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    main {
+        padding: 60px 8%;
+    }
+    
+    .contact {
+        max-width: 600px;
     }
 }

@@ -1,4 +1,6 @@
-/* Reset + fuentes */
+/* =========================
+   RESET + BASE
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,113 +10,120 @@
 
 body {
     background-color: #0a0f24;
-    /* Fondo oscuro pro */
-    color: white;
+    color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* -------- HEADER -------- */
+/* =========================
+   HEADER
+========================= */
 header {
     background: #0d1128;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .name-dev h1 {
-    color: white;
     font-size: 24px;
+    font-weight: 600;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    transition: 0.3s;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #4da6ff;
 }
 
-.social-links a {
-    margin-left: 15px;
-    font-size: 18px;
-    color: white;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: #4da6ff;
-}
-
-/* -------- HERO (MAIN) -------- */
+/* =========================
+   HERO / MAIN
+========================= */
 main {
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 80px 100px;
-    flex: 1;
+    gap: 60px;
 }
 
 #myDescription {
-    max-width: 500px;
+    max-width: 520px;
+}
+
+#myDescription p {
+    margin-bottom: 12px;
+    color: #cfd3ff;
 }
 
 #myDescription h2 {
-    font-size: 28px;
-    margin: 10px 0;
-    line-height: 1.3;
+    font-size: 30px;
+    line-height: 1.25;
 }
 
 #backend {
     color: #4da6ff;
 }
 
+/* =========================
+   FOTO
+========================= */
 #my-photo img {
     width: 300px;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
+    max-width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
 }
 
-/* -------- BOTONES -------- */
+/* =========================
+   BOTONES
+========================= */
+.buttons {
+    margin-top: 25px;
+}
+
 button {
-    padding: 12px 24px;
+    padding: 12px 26px;
     margin: 10px 10px 0 0;
-    border: none;
     border-radius: 8px;
+    border: none;
     cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 #btn-View-Projects {
-    background: #4da6ff;
-    color: white;
+    background-color: #4da6ff;
+    color: #ffffff;
 }
 
 #btn-View-Projects:hover {
-    background: #1e70c1;
+    background-color: #1e70c1;
 }
 
 #btn-contact {
-    background: #ffffff;
+    background-color: #ffffff;
     color: #0a0f24;
 }
 
 #btn-contact:hover {
-    background: #ddd;
+    background-color: #e2e2e2;
 }
 
 #btn-cv {
@@ -124,60 +133,92 @@ button {
 }
 
 #btn-cv:hover {
-    background: #4da6ff;
-    color: white;
+    background-color: #4da6ff;
+    color: #ffffff;
 }
 
-.buttons {
-    margin-top: 20px;
+/* =========================
+   SOCIAL LINKS
+========================= */
+.social-links {
+    margin-top: 25px;
 }
 
-/* -------- FOOTER -------- */
+.social-links a {
+    margin-right: 18px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4da6ff;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
-    text-align: center;
-    padding: 20px;
     background: #0d1128;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
     color: #aaa;
-    margin-top: auto;
 }
 
-/* -------- RESPONSIVE -------- */
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-        /* quitar padding global en móvil */
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+    main {
+        padding: 60px 50px;
     }
+}
 
-    header,
-    footer {
-        width: 100%;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
         padding: 20px;
-        /* padding interno sin afectar ancho */
     }
 
     nav ul {
         flex-direction: column;
-        /* menú en columna en móvil */
-        gap: 10px;
+        gap: 12px;
         text-align: center;
     }
 
     main {
         flex-direction: column;
-        /* apila contenido */
-        padding: 20px;
+        padding: 40px 20px;
+        text-align: center;
     }
 
-    #hero-featured,
-    #hero-other-projects {
-        padding: 30px 10px;
-    }
-
-    .card {
+    #myDescription {
         max-width: 100%;
     }
 
-    #title-other {
-        font-size: 24px;
+    #myDescription h2 {
+        font-size: 26px;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #my-photo img {
+        width: 240px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    #myDescription h2 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
     }
 }

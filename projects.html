@@ -27,130 +27,92 @@
     </header>
 
     <main>
-      <!-- Proyectos destacados -->
-      <section id="hero-featured">
-        <h1 id="title-other">Proyectos Destacados</h1>
-        <div class="project-grid">
-          <!-- Proyecto Agencia -->
-          <div class="card" id="project-agency">
-            <h2>Agencia De Viajes Marítimos</h2>
-            <img
-              src="img/agency-travel.jpg"
-              alt="Agencia de viajes maritimos"
-            />
-            <p>
-              Plataforma de gestión para reservas marítimas desarrollada con
-              <strong>Node.js, Express y MongoDB</strong>. Implementa
-              autenticación de usuarios, control de accesos y manejo de rutas
-              protegidas para la administración de clientes, viajes y pagos en
-              tiempo real.
-            </p>
-            <div class="project-stack">
-              <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-              <i class="devicon-express-original colored" title="Express"></i>
-              <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i
-                class="devicon-javascript-plain colored"
-                title="JavaScript"
-              ></i>
-            </div>
-            <button class="btn-demo btn-view-demo">Ver Demo</button>
-            <a
-              href="https://github.com/kleyderBackend/agenciaLosHermanosK"
-              target="_blank"
-              class="btn-code"
-            >
-              Ver Código
-            </a>
-          </div>
+  <!-- Proyectos destacados -->
+  <section id="hero-featured">
+    <h1 id="title-other">Proyectos Destacados</h1>
 
-          <!-- Proyecto Constructora -->
-          <div class="card" id="project-constructora">
-            <h2>Constructora Civil</h2>
-            <img src="img/constructora.jpg" alt="constructora civil" />
-            <p>
-              Sistema backend para una constructora que administra proyectos,
-              empleados y clientes. Desarrollado con arquitectura MVC,
-              <strong>Node.js, Express y MongoDB</strong>. Incluye registro de
-              contratos, autenticación de usuarios y reportes automatizados para
-              el área administrativa.
-            </p>
-            <div class="project-stack">
-              <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-              <i class="devicon-express-original colored" title="Express"></i>
-              <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i
-                class="devicon-javascript-plain colored"
-                title="JavaScript"
-              ></i>
-            </div>
-            <button class="btn-demo btn-view-demo">Ver Demo</button>
-            <button class="btn-code btn-code-disabled">Ver Código</button>
-          </div>
+    <div class="project-grid">
+
+      <!-- Proyecto Agencia de Viajes -->
+      <div class="card" id="project-agency">
+        <h2>Plataforma Web – Agencia de Viajes</h2>
+        <img src="img/agency-travel.jpg" alt="Agencia de viajes marítimos" />
+
+        <p>
+          Plataforma web desarrollada bajo arquitectura Full Stack para la
+          gestión de reservas turísticas. Incluye panel administrativo,
+          dashboard para clientes autenticados, control de acceso por roles y
+          comunicación en tiempo real mediante chat.
+        </p>
+
+        <div class="project-stack">
+          <i class="devicon-react-original colored" title="React"></i>
+          <i class="devicon-typescript-plain colored" title="TypeScript"></i>
+          <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+          <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
+          <i class="devicon-javascript-plain colored" title="JavaScript"></i>
         </div>
-      </section>
 
-      <!-- Otros proyectos -->
-      <section id="hero-other-projects">
-        <h1 id="title-other">Otros Proyectos</h1>
-        <div class="project-grid">
-          <!-- Ecommerce -->
-          <div class="card" id="project-ecommerce">
-            <h2>Tienda De Ropa Online</h2>
-            <img src="img/tienda-de-ropa.jpg" alt="tienda online" />
-            <p>
-              Aplicación backend para e-commerce de ropa. Incluye
-              <strong>API RESTful</strong> para la gestión de productos,
-              usuarios y pedidos. Implementa pasarela de pagos simulada,
-              validaciones y autenticación con JWT.
-            </p>
-            <div class="project-stack">
-              <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-              <i class="devicon-express-original colored" title="Express"></i>
-              <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i
-                class="devicon-javascript-plain colored"
-                title="JavaScript"
-              ></i>
-            </div>
-            <button class="btn-demo btn-view-demo">Ver Demo</button>
-            <button class="btn-code btn-code-disabled">Ver Código</button>
-          </div>
+        <div class="project-links">
+          <a
+            href="https://github.com/kleyderBackend/transpoerte-los-hermanosK"
+            target="_blank"
+            class="btn-code"
+          >
+            Frontend
+          </a>
 
-          <!-- Hospital -->
-          <div class="card" id="project-hospitasCite">
-            <h2>Sistema Hospitalario</h2>
-            <img src="img/cita.jpg" alt="cita api" />
-            <p>
-              API backend para la gestión de citas hospitalarias. Desarrollada
-              con <strong>Node.js, Express y MongoDB</strong>, maneja módulos
-              para pacientes, médicos y reservas de citas. Incluye validación de
-              datos, roles de usuario y control de acceso.
-            </p>
-            <div class="project-stack">
-              <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-              <i class="devicon-express-original colored" title="Express"></i>
-              <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i
-                class="devicon-javascript-plain colored"
-                title="JavaScript"
-              ></i>
-            </div>
-            <button class="btn-demo btn-view-demo">Ver Demo</button>
-            <button class="btn-code btn-code-disabled">Ver Código</button>
-          </div>
+          <a
+            href="https://github.com/kleyderBackend/transporte_hermanosK_backend"
+            target="_blank"
+            class="btn-code"
+          >
+            Backend
+          </a>
         </div>
-      </section>
-    </main>
+      </div>
 
+      <!-- Proyecto Constructora -->
+      <div class="card" id="project-constructora">
+        <h2>Sistema ERP – Constructora Civil</h2>
+        <img src="img/constructora.jpg" alt="Sistema ERP Constructora Civil" />
+
+        <p>
+          Sistema tipo ERP en desarrollo para una constructora civil, enfocado
+          en la gestión de proyectos, clientes y empleados. Cuenta con panel
+          administrativo privado, métricas de proyectos y separación de áreas
+          pública y privada con autenticación segura.
+        </p>
+
+        <div class="project-stack">
+          <i class="devicon-react-original colored" title="React"></i>
+          <i class="devicon-typescript-plain colored" title="TypeScript"></i>
+          <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+          <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
+        </div>
+
+        <div class="project-links">
+          <a
+            href="https://github.com/kleyderBackend/CCA-Constructora-frontend"
+            target="_blank"
+            class="btn-code"
+          >
+            Frontend
+          </a>
+
+          <a
+            href="https://github.com/kleyderBackend/CCA-Constructora-backend"
+            target="_blank"
+            class="btn-code"
+          >
+            Backend
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/projects.js"></script>
 

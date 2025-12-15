@@ -1,4 +1,4 @@
 document.getElementById("btn-cv").addEventListener("click", () => {
-    window.open("../cv/Kleyder-CV.pdf", "_blank");
+    window.open("../cv/myCVKleyder.pdf", "_blank");
 });
 
