@@ -28,43 +28,103 @@ Portafolio-Web/
 │   ├── projects.js
 │   └── contacts.js
 ├── img/
-├── cv/
-└── docs/
-    └── entregables-aeae2.md
+└── cv/
 ```
 
-## Ejecución local
+## Entregables AEAE2 - Mi Portafolio Web Interactivo
 
-Abre `index.html` en el navegador. Al ser un sitio estático, no requiere instalación de dependencias ni servidor backend.
+## Requerimientos funcionales
 
-## Funcionalidades
+Convención: `RF` identifica los requerimientos funcionales del sistema.
 
-- Navegación entre secciones del portafolio.
-- Menú hamburguesa para pantallas móviles.
-- Lista de proyectos renderizada desde un array de objetos en JavaScript.
-- Formulario de contacto con validación HTML5 y validación en tiempo real con JavaScript.
-- Diseño responsivo para móvil, tablet y escritorio.
+- `RF-01`: El sitio debe mostrar una presentación personal con nombre, perfil y descripción profesional.
+- `RF-02`: El sitio debe permitir navegar entre Inicio, Sobre mí, Proyectos y Contacto.
+- `RF-03`: El sitio debe listar mínimo tres proyectos con descripción, tecnologías e imagen.
+- `RF-04`: El sitio debe incluir un formulario de contacto con nombre, correo electrónico y mensaje.
+- `RF-05`: El formulario debe validar campos obligatorios, formato de correo y longitud del mensaje.
+- `RF-06`: En móvil, el menú debe funcionar como menú hamburguesa.
+- `RF-07`: Los proyectos deben cargarse dinámicamente desde JavaScript.
 
-## Convención de requerimientos
+## Requerimientos no funcionales
 
-- `RF`: Requerimiento funcional. Describe una acción o comportamiento que el sitio debe realizar.
-- `RNF`: Requerimiento no funcional. Describe condiciones de calidad como responsividad, accesibilidad, organización del código y documentación.
+Convención: `RNF` identifica los requerimientos no funcionales, relacionados con calidad, mantenibilidad, accesibilidad y operación del proyecto.
 
-La lista completa de requerimientos está en `docs/entregables-aeae2.md`.
+- `RNF-01`: El sitio debe ser responsivo para móvil, tablet y escritorio.
+- `RNF-02`: El HTML debe usar etiquetas semánticas como `header`, `nav`, `main`, `section`, `article` y `footer`.
+- `RNF-03`: El código CSS debe estar organizado por responsabilidad y usar variables para colores, fuentes y espaciado.
+- `RNF-04`: El sitio debe tener accesibilidad básica con textos alternativos, etiquetas `label` y atributos ARIA donde corresponda.
+- `RNF-05`: El código JavaScript debe estar separado por funcionalidad.
+- `RNF-06`: El repositorio debe mantener historial de commits descriptivos.
+- `RNF-07`: El proyecto debe estar documentado con un README.
 
-## Capturas de pantalla
+## Wireframe de baja fidelidad
 
-Las capturas deben tomarse desde el navegador después de publicar o abrir el sitio localmente. Vistas recomendadas para el entregable:
+```less
+Desktop
+┌─────────────────────────────────────────────────────────────┐
+│ Kleyder Dev        Inicio | Sobre mí | Proyectos | Contacto │
+├─────────────────────────────────────────────────────────────┤
+│ Presentación personal                                      │
+│ Nombre, perfil, descripción, botones y redes sociales       │
+├─────────────────────────────────────────────────────────────┤
+│ Footer                                                      │
+└─────────────────────────────────────────────────────────────┘
 
-- Inicio en escritorio.
-- Proyectos en escritorio.
-- Contacto en móvil con menú hamburguesa.
-- Validación del formulario de contacto.
+Proyectos
+┌─────────────────────────────────────────────────────────────┐
+│ Header + navegación                                         │
+├─────────────────────────────────────────────────────────────┤
+│ Título: Proyectos destacados                                │
+│ [Proyecto 1]        [Proyecto 2]        [Proyecto 3]        │
+├─────────────────────────────────────────────────────────────┤
+│ Footer                                                      │
+└─────────────────────────────────────────────────────────────┘
 
-## Autor
+Móvil
+┌─────────────────────┐
+│ Kleyder Dev   ☰     │
+│ Menú desplegable    │
+├─────────────────────┤
+│ Contenido en una    │
+│ sola columna        │
+└─────────────────────┘
+```
 
-Kleyder Moreno Dávila.
+Puntos de interacción JavaScript:
 
-## Licencia
+- Botón hamburguesa: abre y cierra la navegación móvil.
+- Página de proyectos: crea tarjetas de proyecto desde un array de objetos.
+- Formulario: valida datos en tiempo real y muestra mensajes de estado.
 
-Proyecto académico de uso educativo.
+## Arquitectura y separación de responsabilidades
+
+El proyecto separa HTML, CSS y JavaScript para mantener responsabilidades claras. Los archivos HTML definen la estructura y contenido semántico. La carpeta `css/` contiene estilos por página y un archivo `variables.css` con tokens reutilizables de color, tipografía, espaciado y radios. La carpeta `js/` separa la navegación general (`app.js`), el renderizado de proyectos (`projects.js`) y el formulario de contacto (`contacts.js`).
+
+Separar CSS en múltiples archivos facilita mantener cada vista sin afectar innecesariamente las demás. Modularizar JavaScript permite que cada comportamiento tenga un archivo específico y sea más fácil corregir errores.
+
+## Guía de estilos
+
+Colores principales:
+
+- Fondo principal: `--color-bg: #0a0f24`
+- Superficie: `--color-surface: #0d1128`
+- Azul de acción: `--color-primary: #4da6ff`
+- Texto principal: `--color-text: #ffffff`
+
+Tipografías:
+
+- Principal: `Poppins`, con respaldo Arial.
+- Alternativa: `Segoe UI`.
+
+Componentes reutilizables:
+
+- Botones con radio de 8px, transición de color y estados `hover`.
+- Tarjetas de proyecto con sombra, imagen, descripción, tecnologías y enlaces.
+- Inputs y textarea con estados de foco y mensajes de error.
+- Menú hamburguesa con estado `aria-expanded`.
+
+## Autoevaluación y reflexión
+
+1. Lo más difícil fue coordinar la parte responsiva con la interactividad del menú y el formulario, porque el sitio debe funcionar correctamente tanto en escritorio como en móvil.
+2. La arquitectura del proyecto se relaciona con programación estructurada porque divide el problema en partes pequeñas: estructura HTML, presentación CSS y comportamiento JavaScript. Cada archivo cumple una función concreta.
+3. Si tuviera más tiempo, mejoraría la integración visual de las capturas de pantalla de proyectos, agregaría demos públicas y ampliaría las pruebas de accesibilidad.
