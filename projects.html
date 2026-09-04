@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio | Kleyder Dev</title>
+    <meta
+      name="description"
+      content="Proyectos destacados de Kleyder Dev con tecnologías, descripciones y enlaces a código."
+    />
+    <meta name="author" content="Kleyder Dev" />
+    <link rel="stylesheet" href="css/variables.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
@@ -16,10 +22,21 @@
       <div class="name-dev">
         <h1>Kleyder Dev</h1>
       </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-controls="main-menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav id="container">
-        <ul>
+        <ul id="main-menu">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="aboutme.html">Sobre Mi</a></li>
+          <li><a href="aboutme.html">Sobre mí</a></li>
           <li><a href="projects.html">Proyectos</a></li>
           <li><a href="contacts.html">Contacto</a></li>
         </ul>
@@ -27,92 +44,14 @@
     </header>
 
     <main>
-  <!-- Proyectos destacados -->
+  <!-- Proyectos destacados renderizados con JavaScript -->
   <section id="hero-featured">
     <h1 id="title-other">Proyectos Destacados</h1>
 
-    <div class="project-grid">
-
-      <!-- Proyecto Agencia de Viajes -->
-      <div class="card" id="project-agency">
-        <h2>Plataforma Web – Agencia de Viajes</h2>
-        <img src="img/agency-travel.jpg" alt="Agencia de viajes marítimos" />
-
-        <p>
-          Plataforma web desarrollada bajo arquitectura Full Stack para la
-          gestión de reservas turísticas. Incluye panel administrativo,
-          dashboard para clientes autenticados, control de acceso por roles y
-          comunicación en tiempo real mediante chat.
-        </p>
-
-        <div class="project-stack">
-          <i class="devicon-react-original colored" title="React"></i>
-          <i class="devicon-typescript-plain colored" title="TypeScript"></i>
-          <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-          <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
-          <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-        </div>
-
-        <div class="project-links">
-          <a
-            href="https://github.com/kleyderBackend/transpoerte-los-hermanosK"
-            target="_blank"
-            class="btn-code"
-          >
-            Frontend
-          </a>
-
-          <a
-            href="https://github.com/kleyderBackend/transporte_hermanosK_backend"
-            target="_blank"
-            class="btn-code"
-          >
-            Backend
-          </a>
-        </div>
-      </div>
-
-      <!-- Proyecto Constructora -->
-      <div class="card" id="project-constructora">
-        <h2>Sistema ERP – Constructora Civil</h2>
-        <img src="img/constructora.jpg" alt="Sistema ERP Constructora Civil" />
-
-        <p>
-          Sistema tipo ERP en desarrollo para una constructora civil, enfocado
-          en la gestión de proyectos, clientes y empleados. Cuenta con panel
-          administrativo privado, métricas de proyectos y separación de áreas
-          pública y privada con autenticación segura.
-        </p>
-
-        <div class="project-stack">
-          <i class="devicon-react-original colored" title="React"></i>
-          <i class="devicon-typescript-plain colored" title="TypeScript"></i>
-          <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-          <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
-        </div>
-
-        <div class="project-links">
-          <a
-            href="https://github.com/kleyderBackend/CCA-Constructora-frontend"
-            target="_blank"
-            class="btn-code"
-          >
-            Frontend
-          </a>
-
-          <a
-            href="https://github.com/kleyderBackend/CCA-Constructora-backend"
-            target="_blank"
-            class="btn-code"
-          >
-            Backend
-          </a>
-        </div>
-      </div>
-
-    </div>
+    <div class="project-grid" id="projects-grid" aria-live="polite"></div>
   </section>
 </main>
+    <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/projects.js"></script>
 

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio | Kleyder Dev</title>
+    <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
     <meta
       name="description"
@@ -28,17 +29,29 @@
       <div class="name-dev">
         <h1>Kleyder Dev</h1>
       </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-controls="main-menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="container">
-        <ul>
+        <ul id="main-menu">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="aboutme.html">Sobre Mi</a></li>
+          <li><a href="aboutme.html">Sobre mí</a></li>
           <li><a href="projects.html">Proyectos</a></li>
           <li><a href="contacts.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <div id="myDescription">
+      <!-- Presentación principal del portafolio -->
+      <section id="myDescription">
         <p>Hola, soy</p>
 
         <h1 id="name">Kleyder Moreno Dávila</h1>
@@ -55,13 +68,9 @@
         </p>
 
         <div class="buttons">
-          <a href="projects.html">
-            <button id="btn-View-Projects">Ver Proyectos</button>
-          </a>
+          <a href="projects.html" id="btn-View-Projects">Ver proyectos</a>
 
-          <a href="contacts.html">
-            <button id="btn-contact">Contacto</button>
-          </a>
+          <a href="contacts.html" id="btn-contact">Contacto</a>
         </div>
         <div class="social-links">
           <a
@@ -73,14 +82,17 @@
           </a>
 
           <a
-            href="https://www.linkedin.com/in/kleyder-moreno-dávila-417186387/"
+            href="https://www.linkedin.com/in/kleyder-moreno-d%C3%A1vila-b94313408/"
             target="_blank"
             aria-label="LinkedIn"
           >
             <i class="fab fa-linkedin" style="font-size: 48px"></i>
           </a>
         </div>
-      </div>
+      </section>
+      <figure id="my-photo">
+        <img src="img/foto..png" alt="Foto de perfil de Kleyder Moreno Dávila" />
+      </figure>
     </main>
     <footer>©Derechos reservados 2025</footer>
     <script src="js/app.js"></script>

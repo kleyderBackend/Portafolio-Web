@@ -1,0 +1,19 @@
+:root {
+  --color-bg: #0a0f24;
+  --color-surface: #0d1128;
+  --color-surface-soft: #1a213f;
+  --color-primary: #4da6ff;
+  --color-primary-dark: #1e70c1;
+  --color-text: #ffffff;
+  --color-muted: #cfd3ff;
+  --color-border: rgba(77, 166, 255, 0.35);
+  --color-error: #ff6b6b;
+  --color-success: #47d18c;
+  --font-main: "Poppins", Arial, sans-serif;
+  --font-alt: "Segoe UI", sans-serif;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --radius: 8px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.4);
+}

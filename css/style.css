@@ -1,214 +1,305 @@
-/* =========================
-   RESET + BASE
-========================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
 }
 
 body {
-    background-color: #0a0f24;
-    color: #ffffff;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* =========================
-   HEADER
-========================= */
 header {
-    background: #0d1128;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  background: var(--color-surface);
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .name-dev h1 {
-    font-size: 24px;
-    font-weight: 600;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #4da6ff;
+  color: var(--color-primary);
 }
 
-/* =========================
-   HERO / MAIN
-========================= */
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-soft);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--color-text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 main {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 100px;
-    gap: 60px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px min(6vw, 90px);
+  gap: clamp(32px, 5vw, 72px);
 }
 
 #myDescription {
-    max-width: 520px;
+  max-width: 520px;
+  flex: 1 1 480px;
 }
 
 #myDescription p {
-    margin-bottom: 12px;
-    color: #cfd3ff;
+  margin-bottom: 12px;
+  color: var(--color-muted);
 }
 
 #myDescription h2 {
-    font-size: 30px;
-    line-height: 1.25;
+  font-size: 30px;
+  line-height: 1.25;
 }
 
 #backend {
-    color: #4da6ff;
+  color: var(--color-primary);
 }
 
-/* =========================
-   FOTO
-========================= */
+#my-photo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 0 1 390px;
+  min-height: 410px;
+  margin: 0;
+  padding: 16px 0 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(77, 166, 255, 0.20), transparent 34%),
+    radial-gradient(ellipse at 50% 58%, rgba(13, 17, 40, 0.9), transparent 68%);
+  overflow: visible;
+}
+
+#my-photo::before {
+  content: "";
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background:
+    radial-gradient(circle at center, rgba(77, 166, 255, 0.14), rgba(77, 166, 255, 0.03) 58%, transparent 70%);
+}
+
+#my-photo::after {
+  content: "";
+  position: absolute;
+  width: 72%;
+  height: 18px;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.34);
+  filter: blur(12px);
+}
+
 #my-photo img {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 6px;
-    object-fit: cover;
+  position: relative;
+  z-index: 1;
+  width: min(100%, 350px);
+  max-width: 100%;
+  max-height: 385px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.45));
 }
 
-/* =========================
-   BOTONES
-========================= */
 .buttons {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
+.buttons a,
 button {
-    padding: 12px 26px;
-    margin: 10px 10px 0 0;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  display: inline-block;
+  padding: 12px 26px;
+  margin: 10px 10px 0 0;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 #btn-View-Projects {
-    background-color: #4da6ff;
-    color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-text);
 }
 
 #btn-View-Projects:hover {
-    background-color: #1e70c1;
+  background-color: var(--color-primary-dark);
 }
 
 #btn-contact {
-    background-color: #ffffff;
-    color: #0a0f24;
+  background-color: var(--color-text);
+  color: var(--color-bg);
 }
 
 #btn-contact:hover {
-    background-color: #e2e2e2;
+  background-color: #e2e2e2;
 }
 
-
-/* =========================
-   SOCIAL LINKS
-========================= */
 .social-links {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .social-links a {
-    margin-right: 18px;
-    color: #ffffff;
-    transition: color 0.3s ease;
+  margin-right: 18px;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #4da6ff;
+  color: var(--color-primary);
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer {
-    background: #0d1128;
-    text-align: center;
-    padding: 18px;
-    font-size: 14px;
-    color: #aaa;
+  background: var(--color-surface);
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+  color: #aaa;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 1024px) {
-    main {
-        padding: 60px 50px;
-    }
+  main {
+    padding: 60px 44px;
+    gap: 34px;
+  }
+
+  #my-photo {
+    flex-basis: 320px;
+    min-height: 350px;
+  }
+
+  #my-photo img {
+    width: min(100%, 300px);
+    max-height: 330px;
+  }
 }
 
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    main {
-        flex-direction: column;
-        padding: 40px 20px;
-        text-align: center;
-    }
+  nav {
+    width: 100%;
+  }
 
-    #myDescription {
-        max-width: 100%;
-    }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 
-    #myDescription h2 {
-        font-size: 26px;
-    }
+  nav ul.is-open {
+    display: flex;
+  }
 
-    .buttons button {
-        width: 100%;
-        margin-right: 0;
-    }
+  main {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
 
-    #my-photo img {
-        width: 240px;
-        margin-top: 30px;
-    }
+  #myDescription {
+    max-width: 100%;
+  }
+
+  #myDescription h2 {
+    font-size: 26px;
+  }
+
+  .buttons a,
+  .buttons button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #my-photo {
+    width: min(100%, 360px);
+    min-height: 330px;
+    margin-top: 4px;
+    padding-top: 22px;
+  }
+
+  #my-photo img {
+    width: min(100%, 290px);
+    max-height: 310px;
+  }
 }
 
 @media (max-width: 480px) {
-    #myDescription h2 {
-        font-size: 22px;
-    }
+  #myDescription h2 {
+    font-size: 22px;
+  }
 
-    button {
-        padding: 12px;
-        font-size: 14px;
-    }
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
 }
