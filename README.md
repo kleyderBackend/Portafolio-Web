@@ -45,6 +45,13 @@ Abre `index.html` en el navegador. Al ser un sitio estático, no requiere instal
 - Formulario de contacto con validación HTML5 y validación en tiempo real con JavaScript.
 - Diseño responsivo para móvil, tablet y escritorio.
 
+## Convención de requerimientos
+
+- `RF`: Requerimiento funcional. Describe una acción o comportamiento que el sitio debe realizar.
+- `RNF`: Requerimiento no funcional. Describe condiciones de calidad como responsividad, accesibilidad, organización del código y documentación.
+
+La lista completa de requerimientos está en `docs/entregables-aeae2.md`.
+
 ## Capturas de pantalla
 
 Las capturas deben tomarse desde el navegador después de publicar o abrir el sitio localmente. Vistas recomendadas para el entregable:

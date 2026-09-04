@@ -195,6 +195,17 @@ button {
   background-color: #e2e2e2;
 }
 
+#btn-cv {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+#btn-cv:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
 .social-links {
   margin-top: 25px;
 }

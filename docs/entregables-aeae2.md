@@ -2,23 +2,27 @@
 
 ## Requerimientos funcionales
 
-1. El sitio debe mostrar una presentación personal con nombre, perfil y descripción profesional.
-2. El sitio debe permitir navegar entre Inicio, Sobre mí, Proyectos y Contacto.
-3. El sitio debe listar mínimo tres proyectos con descripción, tecnologías e imagen.
-4. El sitio debe incluir un formulario de contacto con nombre, correo electrónico y mensaje.
-5. El formulario debe validar campos obligatorios, formato de correo y longitud del mensaje.
-6. En móvil, el menú debe funcionar como menú hamburguesa.
-7. Los proyectos deben cargarse dinámicamente desde JavaScript.
+Convención: `RF` identifica los requerimientos funcionales del sistema.
+
+- `RF-01`: El sitio debe mostrar una presentación personal con nombre, perfil y descripción profesional.
+- `RF-02`: El sitio debe permitir navegar entre Inicio, Sobre mí, Proyectos y Contacto.
+- `RF-03`: El sitio debe listar mínimo tres proyectos con descripción, tecnologías e imagen.
+- `RF-04`: El sitio debe incluir un formulario de contacto con nombre, correo electrónico y mensaje.
+- `RF-05`: El formulario debe validar campos obligatorios, formato de correo y longitud del mensaje.
+- `RF-06`: En móvil, el menú debe funcionar como menú hamburguesa.
+- `RF-07`: Los proyectos deben cargarse dinámicamente desde JavaScript.
 
 ## Requerimientos no funcionales
 
-1. El sitio debe ser responsivo para móvil, tablet y escritorio.
-2. El HTML debe usar etiquetas semánticas como `header`, `nav`, `main`, `section`, `article` y `footer`.
-3. El código CSS debe estar organizado por responsabilidad y usar variables para colores, fuentes y espaciado.
-4. El sitio debe tener accesibilidad básica con textos alternativos, etiquetas `label` y atributos ARIA donde corresponda.
-5. El código JavaScript debe estar separado por funcionalidad.
-6. El repositorio debe mantener historial de commits descriptivos.
-7. El proyecto debe estar documentado con un README.
+Convención: `RNF` identifica los requerimientos no funcionales, relacionados con calidad, mantenibilidad, accesibilidad y operación del proyecto.
+
+- `RNF-01`: El sitio debe ser responsivo para móvil, tablet y escritorio.
+- `RNF-02`: El HTML debe usar etiquetas semánticas como `header`, `nav`, `main`, `section`, `article` y `footer`.
+- `RNF-03`: El código CSS debe estar organizado por responsabilidad y usar variables para colores, fuentes y espaciado.
+- `RNF-04`: El sitio debe tener accesibilidad básica con textos alternativos, etiquetas `label` y atributos ARIA donde corresponda.
+- `RNF-05`: El código JavaScript debe estar separado por funcionalidad.
+- `RNF-06`: El repositorio debe mantener historial de commits descriptivos.
+- `RNF-07`: El proyecto debe estar documentado con un README.
 
 ## Wireframe de baja fidelidad
 
