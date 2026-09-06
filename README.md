@@ -60,34 +60,7 @@ Convención: `RNF` identifica los requerimientos no funcionales, relacionados co
 ## Wireframe de baja fidelidad
 
 ```less
-Desktop
-┌─────────────────────────────────────────────────────────────┐
-│ Kleyder Dev        Inicio | Sobre mí | Proyectos | Contacto │
-├─────────────────────────────────────────────────────────────┤
-│ Presentación personal                                      │
-│ Nombre, perfil, descripción, botones y redes sociales       │
-├─────────────────────────────────────────────────────────────┤
-│ Footer                                                      │
-└─────────────────────────────────────────────────────────────┘
-
-Proyectos
-┌─────────────────────────────────────────────────────────────┐
-│ Header + navegación                                         │
-├─────────────────────────────────────────────────────────────┤
-│ Título: Proyectos destacados                                │
-│ [Proyecto 1]        [Proyecto 2]        [Proyecto 3]        │
-├─────────────────────────────────────────────────────────────┤
-│ Footer                                                      │
-└─────────────────────────────────────────────────────────────┘
-
-Móvil
-┌─────────────────────┐
-│ Kleyder Dev   ☰     │
-│ Menú desplegable    │
-├─────────────────────┤
-│ Contenido en una    │
-│ sola columna        │
-└─────────────────────┘
+![alt text](image.png)
 ```
 
 Puntos de interacción JavaScript:
