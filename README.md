@@ -59,9 +59,7 @@ Convención: `RNF` identifica los requerimientos no funcionales, relacionados co
 
 ## Wireframe de baja fidelidad
 
-```less
 ![alt text](image.png)
-```
 
 Puntos de interacción JavaScript:
 
